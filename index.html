@@ -4,14 +4,149 @@
   <meta charset="UTF-8">
   <title>OJHALAND ARRIVED</title>
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c52542bc405b8273c48e65a5e/9ec2eb2c963421f1817953cde.js");</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Suyash Styles</title>
+<style>
+  /* page baseline */
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:28px;
+    flex-wrap:wrap;
+    padding:40px;
+    background:#0b1020;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #fff;
+  }
+
+  .card{padding:18px 24px;border-radius:12px;backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;min-width:300px;min-height:84px;}
+  .glass{background:rgba(255,255,255,0.03);box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+
+  /* 1 — Bold gradient */
+  .grad{
+    font-weight:800;
+    font-size:44px;
+    background:linear-gradient(90deg,#7b61ff,#4dd0e1);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    letter-spacing:6px;
+  }
+
+  /* 2 — Neon */
+  .neon{
+    font-size:44px;
+    font-weight:800;
+    color:#fffb;
+    text-shadow:
+      0 0 6px rgba(125,255,255,0.06),
+      0 0 12px rgba(125,255,255,0.08),
+      0 6px 18px rgba(77,208,225,0.06),
+      0 0 28px rgba(123,97,255,0.15);
+    letter-spacing:6px;
+  }
+
+  /* 3 — Outline / stroke */
+  .outline{
+    font-size:44px;
+    font-weight:900;
+    color:transparent;
+    -webkit-text-stroke:2px #fff;
+    text-stroke:2px #fff;
+    letter-spacing:6px;
+  }
+
+  /* 4 — Retro block */
+  .retro{
+    font-size:36px;
+    font-weight:800;
+    padding:8px 20px;
+    border-radius:10px;
+    background:linear-gradient(180deg,#ff9a9e 0%, #fecfef 100%);
+    color:#2b0a2f;
+    letter-spacing:4px;
+  }
+
+  /* 5 — Typewriter */
+  .typewriter{
+    font-size:34px;
+    font-weight:700;
+    font-family: "Courier New", monospace;
+    border-right:4px solid #fff;
+    white-space:nowrap;
+    overflow:hidden;
+    width:18ch;
+    animation: typing 2.8s steps(18,end), blink 0.8s step-end infinite;
+  }
+  @keyframes typing { from { width:0 } to { width:18ch } }
+  @keyframes blink { 50% { border-color: transparent } }
+
+  /* 6 — Glitch */
+  .glitch{
+    position:relative;
+    font-size:40px;
+    font-weight:900;
+    letter-spacing:4px;
+    color:#fff;
+  }
+  .glitch::before,
+  .glitch::after{
+    content:attr(data-text);
+    position:absolute;
+    left:0; top:0;
+    width:100%;
+    overflow:hidden;
+    clip-path:polygon(0 0,100% 0,100% 33%,0 33%);
+    opacity:0.8;
+  }
+  .glitch::before{ transform:translate(2px,-2px); color:#ff4d6d; mix-blend-mode:screen; animation:gl1 2s infinite linear; }
+  .glitch::after{ transform:translate(-2px,2px); color:#3df7d1; mix-blend-mode:screen; animation:gl2 2s infinite linear; }
+  @keyframes gl1 { 0%{transform:translate(2px,-2px)}50%{transform:translate(6px,2px)}100%{transform:translate(2px,-2px)} }
+  @keyframes gl2 { 0%{transform:translate(-2px,2px)}50%{transform:translate(-6px,-2px)}100%{transform:translate(-2px,2px)} }
+
+  /* 7 — Vertical stacked letters */
+  .stack{
+    font-size:28px;
+    font-weight:800;
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    letter-spacing:4px;
+  }
+
+  /* 8 — Minimal thin */
+  .thin{
+    font-size:34px;
+    font-weight:300;
+    letter-spacing:10px;
+    opacity:0.95;
+  }
+
+  /* responsive */
+  @media (max-width:640px){
+    body{gap:18px;padding:20px}
+    .card{min-width:100%;justify-content:flex-start}
+    .grad,.neon,.outline,.glitch{font-size:28px}
+  }
+</style>
 </head>
 <body>
-  <h1>JOSEPH WASNT TRYNA CONTRIBUTE 50K</h1>
-  <p>we farming our own chickens, thousands of chickens, running around everywhere, quack quack quack</p>
-  <p>need to make to-do list right here of things to add in future. this is apart of that to-do list</p>
+  <h1>SUYASH OJHA</h1>
+  <div class="card glass"><div class="grad">SUYASH OJHA</div></div>
+  <div class="card glass"><div class="neon">SUYASH OJHA</div></div>
+  <div class="card glass"><div class="outline">SUYASH OJHA</div></div>
+  <div class="card glass"><div class="retro">SUYASH OJHA</div></div>
+  <div class="card glass"><div class="typewriter">SUYASH OJHA</div></div>
+  <div class="card glass"><div class="glitch" data-text="SUYASH OJHA">SUYASH OJHA</div></div>
+  <div class="card glass"><div class="stack">SUYASH OJHA</div></div>
+  <div class="card glass"><div class="thin">SUYASH OJHA</div></div>
   <img src="assets/rickrossTest.jpg" alt="rick ross testtttttt">
 </body>
 </html>
+
 
 
 
