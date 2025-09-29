@@ -125,24 +125,22 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
-    .poster .bottom {
-      height: 22%;
-      background: var(--navy);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:0 clamp(12px,3vw,28px);
-    }
+.poster .bottom h1 {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 90px); 
+  color: var(--muted-blue);
+  letter-spacing: 0.06em;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+  white-space: pre-line; /* needs to be changed maybe */
+  position: relative;
+  top: 8%; 
+}
 
-    .poster .bottom h1{
-      margin:0;
-      font-size: clamp(40px, 6vw, 110px);
-      color: var(--muted-blue);
-      letter-spacing:0.06em;
-      font-weight:900;
-      text-transform:uppercase;
-      line-height:1;
-    }
+
+
 
     .poster::before{
       content:"";
@@ -185,9 +183,12 @@
         <img src="assets/testingImage.jpg" alt="Custom Image">
       </div>
 
-      <div class="bottom">
-        <h1 id="mainTitle">SUYASH OJHA</h1>
-      </div>
+<div class="bottom">
+  <h1 id="mainTitle">SUYASHOJHA.COM
+IS BEING BUILT</h1>
+</div>
+
+
     </main>
   </div>
 
@@ -214,7 +215,7 @@
         span.textContent = NAME;
 
         const size = rand(30, 90);
-        const x = (c+0.5) * (100/cols) + rand(-8,8); // spread with spacing
+        const x = (c+0.5) * (100/cols) + rand(-8,8); 
         const y = (r+0.5) * (100/rows) + rand(-8,8);
 
         span.style.fontSize = size + 'px';
@@ -238,4 +239,5 @@
 
 </body>
 </html>
+
 
