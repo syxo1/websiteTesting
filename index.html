@@ -1,149 +1,303 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>OJHALAND ARRIVED</title>
   <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c52542bc405b8273c48e65a5e/9ec2eb2c963421f1817953cde.js");</script>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Suyash Styles</title>
-<style>
+  <!-- Optional: heavy geometric sans for the poster look — falls back to system fonts if offline -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 
-  body{
-    margin:0;
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:28px;
-    flex-wrap:wrap;
-    padding:40px;
-    background: rgb(242, 39, 76);
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    color: #fff;
-  }
+  <style>
+    :root{
+      --cream: #f2e6cc;
+      --deep-red: #b82b2b;
+      --muted-blue: #6f8fa1;
+      --navy: #1f3140;
+      --gap: 18px;
+    }
 
-  .card{padding:18px 24px;border-radius:12px;backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;min-width:300px;min-height:84px;}
-  .glass{background:rgba(255,255,255,0.03);box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+    /* Reset & base */
+    *{box-sizing: border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--cream);
+      overflow:hidden;
+      color:var(--navy);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
 
-  .grad{
-    font-weight:800;
-    font-size:44px;
-    background:linear-gradient(90deg,#7b61ff,#4dd0e1);
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-    letter-spacing:6px;
-  }
+    /* Full-bleed container */
+    .stage{
+      position:relative;
+      width:100vw;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:clamp(12px,4vw,40px);
+    }
 
-  .neon{
-    font-size:44px;
-    font-weight:800;
-    color:#fffb;
-    text-shadow:
-      0 0 6px rgba(125,255,255,0.06),
-      0 0 12px rgba(125,255,255,0.08),
-      0 6px 18px rgba(77,208,225,0.06),
-      0 0 28px rgba(123,97,255,0.15);
-    letter-spacing:6px;
-  }
+    /* The repeating word layer (random scattered text) */
+    .spray {
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      overflow:hidden;
+    }
 
-  .outline{
-    font-size:44px;
-    font-weight:900;
-    color:transparent;
-    -webkit-text-stroke:2px #fff;
-    text-stroke:2px #fff;
-    letter-spacing:6px;
-  }
-  
-  .retro{
-    font-size:36px;
-    font-weight:800;
-    padding:8px 20px;
-    border-radius:10px;
-    background:linear-gradient(180deg,#ff9a9e 0%, #fecfef 100%);
-    color:#2b0a2f;
-    letter-spacing:4px;
-  }
+    .spray .tag{
+      position:absolute;
+      white-space:nowrap;
+      font-weight:900;
+      letter-spacing:0.06em;
+      opacity:0.12;
+      transform-origin:center;
+      mix-blend-mode:multiply;
+      -webkit-font-smoothing:antialiased;
+    }
 
-  .typewriter{
-    font-size:34px;
-    font-weight:700;
-    font-family: "Courier New", monospace;
-    border-right:4px solid #fff;
-    white-space:nowrap;
-    overflow:hidden;
-    width:18ch;
-    animation: typing 2.8s steps(18,end), blink 0.8s step-end infinite;
-  }
-  @keyframes typing { from { width:0 } to { width:18ch } }
-  @keyframes blink { 50% { border-color: transparent } }
+    /* Poster card in the center inspired by the Kanye / Hope poster layout */
+    .poster {
+      position:relative;
+      width: min(1100px, 92vw);
+      aspect-ratio: 3/4; /* tall poster */
+      border-radius:6px;
+      overflow:hidden;
+      box-shadow: 0 30px 60px rgba(16,24,32,0.35);
+      background:
+        linear-gradient(to bottom right, var(--muted-blue) 0%, var(--navy) 40%),
+        var(--cream);
+      display:flex;
+      flex-direction:column;
+    }
 
-  .glitch{
-    position:relative;
-    font-size:40px;
-    font-weight:900;
-    letter-spacing:4px;
-    color:#fff;
-  }
-  .glitch::before,
-  .glitch::after{
-    content:attr(data-text);
-    position:absolute;
-    left:0; top:0;
-    width:100%;
-    overflow:hidden;
-    clip-path:polygon(0 0,100% 0,100% 33%,0 33%);
-    opacity:0.8;
-  }
-  .glitch::before{ transform:translate(2px,-2px); color:#ff4d6d; mix-blend-mode:screen; animation:gl1 2s infinite linear; }
-  .glitch::after{ transform:translate(-2px,2px); color:#3df7d1; mix-blend-mode:screen; animation:gl2 2s infinite linear; }
-  @keyframes gl1 { 0%{transform:translate(2px,-2px)}50%{transform:translate(6px,2px)}100%{transform:translate(2px,-2px)} }
-  @keyframes gl2 { 0%{transform:translate(-2px,2px)}50%{transform:translate(-6px,-2px)}100%{transform:translate(-2px,2px)} }
+    /* top image-ish area (we'll stylize it with layered color blocks) */
+    .poster .top {
+      flex: 1 1 70%;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      align-items:stretch;
+    }
 
-  .stack{
-    font-size:28px;
-    font-weight:800;
-    writing-mode:vertical-rl;
-    transform:rotate(180deg);
-    letter-spacing:4px;
-  }
-  
-  .thin{
-    font-size:34px;
-    font-weight:300;
-    letter-spacing:10px;
-    opacity:0.95;
-  }
+    .block {
+      position:relative;
+      display:block;
+      width:100%;
+      height:100%;
+    }
 
-  @media (max-width:640px){
-    body{gap:18px;padding:20px}
-    .card{min-width:100%;justify-content:flex-start}
-    .grad,.neon,.outline,.glitch{font-size:28px}
-  }
-</style>
+    /* left warm block */
+    .block.left {
+      background: linear-gradient(180deg, rgba(241,225,187,1) 0%, rgba(241,225,187,0.0) 60%);
+    }
+
+    /* right red block (poster-y solid) */
+    .block.right {
+      background: linear-gradient(180deg, rgba(184,43,43,1) 0%, rgba(150,30,30,1) 100%);
+    }
+
+    /* stylized silhouette: a large centered mask using blend modes */
+    .silhouette {
+      position:absolute;
+      inset:8% 6% 6% 6%;
+      background:
+        radial-gradient(120% 80% at 30% 22%, rgba(242,238,223,0.98) 0% , transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.08));
+      mix-blend-mode:screen;
+      filter:contrast(1.02) saturate(0.96);
+      border-radius:4px;
+      transform:translateY(0%);
+      z-index:2;
+    }
+
+    /* bottom name band */
+    .poster .bottom {
+      height: 22%;
+      background: var(--navy);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:0 clamp(12px,3vw,28px);
+    }
+
+    .poster .bottom h1{
+      margin:0;
+      font-size: clamp(40px, 6vw, 110px);
+      color: var(--muted-blue);
+      letter-spacing:0.06em;
+      font-weight:900;
+      text-transform:uppercase;
+      line-height:1;
+    }
+
+    /* Decorative thin cream border around poster */
+    .poster::before{
+      content:"";
+      position:absolute;
+      inset:6px;
+      border: 18px solid var(--cream);
+      pointer-events:none;
+      box-sizing:border-box;
+      z-index:5;
+    }
+
+    /* small control */
+    .controls{
+      position:absolute;
+      left:var(--gap);
+      top:var(--gap);
+      z-index:30;
+      display:flex;
+      gap:8px;
+    }
+    .controls button{
+      appearance:none;
+      border:0;
+      background:var(--navy);
+      color:var(--cream);
+      padding:8px 12px;
+      border-radius:6px;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:0 6px 18px rgba(0,0,0,0.18);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width:600px){
+      .poster::before{ border-width:12px }
+      .poster .bottom{ height: 26% }
+    }
+
+    /* subtle animation for the scattered words */
+    .float-y{
+      animation: floatY 8s ease-in-out infinite;
+    }
+    @keyframes floatY{
+      0%{ transform: translateY(0) }
+      50%{ transform: translateY(-8px) }
+      100%{ transform: translateY(0) }
+    }
+  </style>
 </head>
 <body>
-  <h1>SUYASH OJHA</h1>
-  <div class="card glass"><div class="grad">SUYASH OJHA</div></div>
-  <div class="card glass"><div class="neon">SUYASH OJHA</div></div>
-  <div class="card glass"><div class="outline">SUYASH OJHA</div></div>
-  <div class="card glass"><div class="retro">SUYASH OJHA</div></div>
-  <div class="card glass"><div class="typewriter">SUYASH OJHA</div></div>
-  <div class="card glass"><div class="glitch" data-text="SUYASH OJHA">SUYASH OJHA</div></div>
-  <div class="card glass"><div class="stack">SUYASH OJHA</div></div>
-  <div class="card glass"><div class="thin">SUYASH OJHA</div></div>
-  <img src="assets/rickrossTest.jpg" alt="rick ross testtttttt">
+  <div class="stage" aria-hidden="false">
+    <div class="controls" aria-hidden="true">
+      <button id="regen">Regenerate</button>
+      <button id="toggleAnim">Toggle Motion</button>
+      <button id="download">Download PNG</button>
+    </div>
+
+    <div class="spray" id="spray" aria-hidden="true"></div>
+
+    <main class="poster" role="main" aria-label="Suyash Ojha poster inspired design">
+      <div class="top">
+        <div class="block left">
+          <div class="silhouette" style="background:
+            radial-gradient(80% 60% at 10% 10%, rgba(242,238,223,1) 0%, transparent 25%),
+            linear-gradient(180deg, rgba(111,143,161,0.85), rgba(111,143,161,0.18));">
+          </div>
+        </div>
+        <div class="block right">
+          <div class="silhouette" style="background:
+            radial-gradient(50% 40% at 80% 15%, rgba(242,238,223,1) 0%, transparent 15%),
+            linear-gradient(180deg, rgba(184,43,43,0.95), rgba(150,30,30,0.95));">
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <h1 id="mainTitle">SUYASH OJHA</h1>
+      </div>
+    </main>
+  </div>
+
+<script>
+  const spray = document.getElementById('spray');
+  const NAME = 'SUYASH OJHA';
+  const COLOR_PALETTE = ['#b82b2b', '#6f8fa1', '#f2e6cc', '#1f3140'];
+
+  function rand(min, max){ return min + Math.random()*(max-min) }
+
+  function makeSpray(count=110){
+    spray.innerHTML = '';
+    for(let i=0;i<count;i++){
+      const span = document.createElement('span');
+      span.className = 'tag';
+      span.textContent = NAME;
+      // randomize style
+      const size = rand(18, 140); // px
+      span.style.fontSize = size + 'px';
+      const left = rand(-20, 100); // % allow slightly offscreen
+      const top  = rand(-20, 100);
+      const rot  = rand(-35, 35);
+      const color = COLOR_PALETTE[Math.floor(rand(0, COLOR_PALETTE.length))];
+      const opacity = rand(0.06, 0.18);
+      span.style.left = left + '%';
+      span.style.top  = top + '%';
+      span.style.transform = `translate(-50%,-50%) rotate(${rot}deg)`;
+      span.style.color = color;
+      span.style.opacity = opacity;
+      span.style.zIndex = 1 + Math.floor(rand(0,6));
+      spray.appendChild(span);
+    }
+  }
+
+  // initial fill
+  makeSpray();
+
+  // keep regenerating every 250ms
+  setInterval(()=> makeSpray(), 250);
+
+  // download PNG helper
+  function downloadPNG(filename='suyash-ojha-poster.png'){
+    const el = document.querySelector('.poster');
+    const width = el.offsetWidth;
+    const height = el.offsetHeight;
+
+    if (window.html2canvas){
+      html2canvas(el, {backgroundColor: null, scale: 2}).then(canvas=>{
+        const a = document.createElement('a');
+        a.href = canvas.toDataURL('image/png');
+        a.download = filename;
+        a.click();
+      });
+      return;
+    }
+
+    const xml = new XMLSerializer().serializeToString(el);
+    const svg = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
+        <foreignObject width="100%" height="100%">
+          ${xml}
+        </foreignObject>
+      </svg>
+    `;
+    const svgBlob = new Blob([svg], {type:'image/svg+xml;charset=utf-8'});
+    const url = URL.createObjectURL(svgBlob);
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = width*2;
+      canvas.height = height*2;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = getComputedStyle(document.body).backgroundColor || '#fff';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      URL.revokeObjectURL(url);
+      const a = document.createElement('a');
+      a.href = canvas.toDataURL('image/png');
+      a.download = filename;
+      a.click();
+    };
+    img.src = url;
+  }
+
+  document.getElementById('download').addEventListener('click', ()=>downloadPNG());
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
