@@ -17,7 +17,7 @@
       --gap: 18px;
     }
 
-    /* Reset & base */
+
     *{box-sizing: border-box}
     html,body{height:100%}
     body{
@@ -30,7 +30,6 @@
       -moz-osx-font-smoothing:grayscale;
     }
 
-    /* Full-bleed container */
     .stage{
       position:relative;
       width:100vw;
@@ -41,7 +40,6 @@
       padding:clamp(12px,4vw,40px);
     }
 
-    /* The repeating word layer (random scattered text) */
     .spray {
       position:absolute;
       inset:0;
@@ -60,11 +58,10 @@
       -webkit-font-smoothing:antialiased;
     }
 
-    /* Poster card in the center inspired by the Kanye / Hope poster layout */
     .poster {
       position:relative;
       width: min(1100px, 92vw);
-      aspect-ratio: 3/4; /* tall poster */
+      aspect-ratio: 3/4; 
       border-radius:6px;
       overflow:hidden;
       box-shadow: 0 30px 60px rgba(16,24,32,0.35);
@@ -75,7 +72,6 @@
       flex-direction:column;
     }
 
-    /* top image-ish area (we'll stylize it with layered color blocks) */
     .poster .top {
       flex: 1 1 70%;
       display:grid;
@@ -90,17 +86,14 @@
       height:100%;
     }
 
-    /* left warm block */
     .block.left {
       background: linear-gradient(180deg, rgba(241,225,187,1) 0%, rgba(241,225,187,0.0) 60%);
     }
 
-    /* right red block (poster-y solid) */
     .block.right {
       background: linear-gradient(180deg, rgba(184,43,43,1) 0%, rgba(150,30,30,1) 100%);
     }
-
-    /* stylized silhouette: a large centered mask using blend modes */
+    
     .silhouette {
       position:absolute;
       inset:8% 6% 6% 6%;
@@ -114,7 +107,6 @@
       z-index:2;
     }
 
-    /* bottom name band */
     .poster .bottom {
       height: 22%;
       background: var(--navy);
@@ -134,7 +126,6 @@
       line-height:1;
     }
 
-    /* Decorative thin cream border around poster */
     .poster::before{
       content:"";
       position:absolute;
@@ -145,7 +136,6 @@
       z-index:5;
     }
 
-    /* small control */
     .controls{
       position:absolute;
       left:var(--gap);
@@ -166,13 +156,11 @@
       box-shadow:0 6px 18px rgba(0,0,0,0.18);
     }
 
-    /* Responsive tweaks */
     @media (max-width:600px){
       .poster::before{ border-width:12px }
       .poster .bottom{ height: 26% }
     }
 
-    /* subtle animation for the scattered words */
     .float-y{
       animation: floatY 8s ease-in-out infinite;
     }
@@ -185,11 +173,7 @@
 </head>
 <body>
   <div class="stage" aria-hidden="false">
-    <div class="controls" aria-hidden="true">
-      <button id="regen">Regenerate</button>
-      <button id="toggleAnim">Toggle Motion</button>
-      <button id="download">Download PNG</button>
-    </div>
+
 
     <div class="spray" id="spray" aria-hidden="true"></div>
 
@@ -301,3 +285,4 @@
 
 </body>
 </html>
+
